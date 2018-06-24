@@ -1,5 +1,5 @@
 const initialState:any = {
-  value: 'Welcome to Minesweeper!',
+  gameTitle: 'Welcome to Minesweeper!',
 };
 
 export default (state = initialState, action: any) => {

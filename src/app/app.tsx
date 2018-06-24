@@ -17,7 +17,7 @@ class App extends React.Component <any, {}> {
 
 const mapStateToProps = (state:any) => ({
   game: {
-    title: state.value,
+    title: state.gameTitle,
   },
 });
 
