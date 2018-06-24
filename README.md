@@ -13,25 +13,17 @@ Run project `npm install` and then `npm start` to run development mode.
 Open `http://localhost:8080`.
 
 ## What to show
-
 The following is a list of items I wish to show:
-
 * When a cell with no adjacent mines is revealed, all adjacent squares will be revealed (and repeat)
-
 * Ability to 'flag' a cell with a question mark or red flag
-
 * Alert when game is over
-
 * Persistence. Not to lose the game if browser is closed
-
 * Time tracking
-
 * Ability to start a new game and preserve/resume the old ones
-
 * Ability to select the game parameters: number of rows, columns, and mines
-
 * Ability to support multiple users/accounts
-
 * Design and implement an API for the game (think of a mobile app for your API)
-
 * Nice user experience (eg avoid page reload while playing)
+
+## Conventions
+- BEM CSS naming conventions
