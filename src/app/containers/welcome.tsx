@@ -1,15 +1,25 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { startNewGame } from '../actions';
 import './welcome.css';
 
-export default class Welcome extends React.Component {
+class Welcome extends React.Component <any> {
   render() {
     return (
       <section className="welcome__container">
         <h2>===================================</h2>
         <p>This is a playable version of Minesweeper</p>
         <h4>Please, start a game:</h4>
-        <button>Start a new game!</button>
+        <button onClick={this.props.startNewGame}>
+          Start a new game!
+        </button>
       </section>
     );
   }
 }
+
+const mapActionsToProps = (dispatch:Function) => ({
+  startNewGame: () => dispatch(startNewGame()),
+});
+
+export default connect(null, mapActionsToProps)(Welcome);
