@@ -1,19 +1,20 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import Welcome from './containers/welcome';
 
 class App extends React.Component <any, {}> {
 
   render() {
     return (
       <main className="app__container">
-        <h1>{this.props.value}</h1>
+        <Welcome />
       </main>
     );
   }
 }
 
 const mapStateToProps = (state:any) => ({
-  value: state.value
+  value: state.value,
 });
 
 export default connect(mapStateToProps)(App);
