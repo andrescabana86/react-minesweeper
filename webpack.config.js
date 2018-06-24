@@ -1,3 +1,4 @@
+const HtmlWebPackPlugin = require("html-webpack-plugin");
 const path = require('path');
 
 module.exports = {
@@ -5,5 +6,26 @@ module.exports = {
   output: {
     filename: 'bundle.min.js',
     path: path.join(__dirname, 'dist')
-  }
+  },
+  module: {
+    rules: [
+      {
+        test: /\.(ts|tsx)$/,
+        loader: "awesome-typescript-loader",
+        exclude: /node_modules/
+      }, {
+        test: /\.html$/,
+        use: [
+          { loader: "html-loader" }
+        ],
+        exclude: /node_modules/
+      }
+    ]
+  },
+  plugins: [
+    new HtmlWebPackPlugin({
+      template: "./src/index.tpl.html",
+      filename: "index.html"
+    })
+  ]
 };
