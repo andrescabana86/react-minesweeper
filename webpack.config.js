@@ -27,6 +27,10 @@ module.exports = {
       }
     ]
   },
+  resolve: {
+    modules: [path.join(__dirname), "node_modules"],
+    extensions: ['.js', '.json', '.ts', '.tsx']
+  },
   plugins: [
     new HtmlWebPackPlugin({
       template: "./src/index.tpl.html",
