@@ -1,3 +1,4 @@
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const path = require('path');
 
@@ -14,6 +15,10 @@ module.exports = {
         loader: "awesome-typescript-loader",
         exclude: /node_modules/
       }, {
+        test: /\.css$/,
+        use: [MiniCssExtractPlugin.loader, "css-loader"],
+        exclude: /node_modules/
+      }, {
         test: /\.html$/,
         use: [
           { loader: "html-loader" }
@@ -26,6 +31,10 @@ module.exports = {
     new HtmlWebPackPlugin({
       template: "./src/index.tpl.html",
       filename: "index.html"
+    }),
+    new MiniCssExtractPlugin({
+      filename: "[name].css",
+      chunkFilename: "[id].css"
     })
   ]
 };
