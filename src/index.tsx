@@ -1,6 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import store from './app/store';
+import App from './app/app';
 
 ReactDOM.render(
-  <h1>Hello World!</h1>,
-  document.getElementById('root'));
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById('root')
+);
