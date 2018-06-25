@@ -1,5 +1,9 @@
 # REACT MINESWEEPER!
-This is the react-minesweeper version made by me!
+This is the react-minesweeper version made by me!. The challenge of this project
+is to make a version of minesweeper game in less than 5hs.
+
+## Time spent
+I did the master version in 5h 43m 37s, including production bundle and gh-pages demo link.
 
 ## Dependencies
 Run docker:
