@@ -1,0 +1,16 @@
+.cell__container {
+  align-items: center;
+  background-color: #ddd;
+  border-radius: 3px;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: inline-flex;
+  font-weight: bold;
+  font-size: 11px;
+  height: 40px;
+  justify-content: center;
+  margin: 3px;
+  padding: 0px;
+  text-align: center;
+  width: 40px;
+}

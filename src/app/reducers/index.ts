@@ -2,7 +2,7 @@ import { START_NEW_GAME } from '../actions/types';
 
 const initialState:any = {
   gameTitle: 'Welcome to Minesweeper!',
-  gameStarted: false,
+  gameStarted: true,
   board: [
     'row',
     'row',
