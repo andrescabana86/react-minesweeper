@@ -20,6 +20,9 @@ const initialState:any = {
     '2,5': { position: '2,5', status: 'hidden', type: 'space', value: 0 },
     '2,6': { position: '2,6', status: 'hidden', type: 'space', value: 0 },
   },
+  neighborsByXY: {
+    '2,1': ['2,2', '2,3', '2,4', '2,5', '2,6'],
+  },
   board: [
     {
       position: '1', children: [
