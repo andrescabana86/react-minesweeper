@@ -3,6 +3,14 @@ import { START_NEW_GAME } from '../actions/types';
 const initialState:any = {
   gameTitle: 'Welcome to Minesweeper!',
   gameStarted: false,
+  board: [
+    'row',
+    'row',
+    'row',
+    'row',
+    'row',
+    'row',
+  ],
 };
 
 export default (state = initialState, action: any) => {

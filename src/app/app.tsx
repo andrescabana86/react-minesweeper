@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import Welcome from './containers/welcome';
+import Board from './containers/board';
 import './app.css';
 
 class App extends React.Component <any, {}> {
@@ -11,7 +12,7 @@ class App extends React.Component <any, {}> {
         <h1>{this.props.game.title}</h1>
         {
           this.props.game.started
-            ? (<h1>this is the board space</h1>)
+            ? (<Board />)
             : (<Welcome />)
         }
       </main>
