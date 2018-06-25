@@ -2,3 +2,8 @@
   background-color: transparent;
   text-align: center;
 }
+
+.welcome__rules {
+  margin-top:20px;
+  text-align: left;
+}

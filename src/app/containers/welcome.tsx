@@ -15,6 +15,14 @@ class Welcome extends React.Component <any> {
         <button onClick={this.props.startNewGame}>
           Start a new game!
         </button>
+        <div className="welcome__rules">Rules to win:
+          <ul>
+            <li>Right click to flag a square.</li>
+            <li>Do not click on mines.</li>
+            <li>You can only flag bombs.</li>
+            <li>If you click on a space, It will reveal all adjacent squares with spaces.</li>
+          </ul>
+        </div>  
         <h2>===================================</h2>
         {
           hasPreviousSavedGames && (
