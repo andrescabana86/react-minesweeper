@@ -1,4 +1,7 @@
-import { START_NEW_GAME } from '../actions/types';
+import {
+  START_NEW_GAME,
+  REVEAL_CELL } from '../actions/types';
+import { revealCell } from '../helpers';
 
 const initialState:any = {
   gameTitle: 'Welcome to Minesweeper!',
@@ -35,6 +38,12 @@ export default (state = initialState, action: any) => {
         ...state,
         gameStarted: true,
         gameTitle: 'Good Luck!',
+      };
+
+    case REVEAL_CELL:
+      revealCell(state, action.cellPosition);
+      return {
+        ...state,
       };
 
     default:

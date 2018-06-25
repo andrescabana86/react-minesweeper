@@ -14,3 +14,19 @@
   text-align: center;
   width: 40px;
 }
+
+.cell--danger {
+  color:red;
+}
+
+.cell--number-danger {
+  color:red;
+}
+
+.cell--number-warning {
+  color:orange;
+}
+
+.cell--number-advice {
+  color:blue;
+}
