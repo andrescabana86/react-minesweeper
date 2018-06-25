@@ -20,10 +20,15 @@ The following is a list of items I wish to show:
 * Persistence. Not to lose the game if browser is closed DONE!
 * Time tracking DONE!
 * Ability to start a new game and preserve/resume the old ones DONE!
-* Ability to select the game parameters: number of rows, columns, and mines
-* Ability to support multiple users/accounts
-* Design and implement an API for the game (think of a mobile app for your API)
-* Nice user experience (eg avoid page reload while playing)
+* Ability to select the game parameters: number of rows, columns, and mines (TODO)
+* Ability to support multiple users/accounts (TODO)
+* Design and implement an API for the game (think of a mobile app for your API) (TODO)
+* Nice user experience (eg avoid page reload while playing) DONE!
 
-## Conventions
+## Techstack & Conventions
 - BEM CSS naming conventions
+- Typescript with ts linter
+- ES6 classes
+- import & export modules
+- React & Redux architecture
+- Webpack 4
