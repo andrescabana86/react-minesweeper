@@ -13,6 +13,7 @@ export default (state = initialState, action: any) => {
       return {
         ...state,
         gameStarted: true,
+        gameTitle: 'Good Luck!',
       };
 
     default:
