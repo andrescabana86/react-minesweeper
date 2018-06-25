@@ -4,7 +4,8 @@
   "description": "This is the react minesweeper version by me!",
   "main": "index.tsx",
   "scripts": {
-    "start": "webpack-dev-server --progress --mode development --display-error-details --colors"
+    "start": "webpack-dev-server --progress --mode development --display-error-details --colors",
+    "build": "webpack --progress --mode production --env.PROD"
   },
   "author": "@andrescabana86",
   "license": "MIT",
