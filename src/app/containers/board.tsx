@@ -1,12 +1,17 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Row } from '../components/row';
-import { revealCell } from '../actions';
+import { revealCell, flagCell } from '../actions';
 import './board.css';
 
 class Board extends React.Component <any> {
   onRevealCell(cell:any) {
     this.props.revealCell(cell.position);
+  }
+
+  onFlagCell(evt:any, cell:any) {
+    evt.preventDefault();
+    this.props.flagCell(cell.position);
   }
 
   render() {
@@ -19,7 +24,8 @@ class Board extends React.Component <any> {
             return (
               <Row key={idx}
                 children={children}
-                revealCell={this.onRevealCell.bind(this)} />
+                revealCell={this.onRevealCell.bind(this)}
+                flagCell={this.onFlagCell.bind(this)} />
             );
           })
         }
@@ -37,6 +43,7 @@ const mapStateToProps = (state:any) => ({
 
 const mapActionsToProps = (dispatch:Function) => ({
   revealCell: (cellPos:string) => dispatch(revealCell(cellPos)),
+  flagCell: (cellPos:string) => dispatch(flagCell(cellPos)),
 });
 
 export default connect(mapStateToProps, mapActionsToProps)(Board);

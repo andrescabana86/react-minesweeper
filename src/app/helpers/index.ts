@@ -26,3 +26,10 @@ const revealAllSurroundingSpaces = (state:any, cell:any) => {
     });
   }
 };
+
+export const flagCell = (state:any, cellPosition:string) => {
+  const cell = state.cellsByXY[cellPosition];
+  cell.type = CELL_TYPES.flag;
+  revealCell(cell);
+  state.minesByXY[cellPosition] = false;
+};

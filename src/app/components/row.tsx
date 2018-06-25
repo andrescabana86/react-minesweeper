@@ -8,7 +8,8 @@ export const Row:React.SFC<any> = (props:any) => {
         props.children.map((cell:any, idx:number) =>
           <Cell key={idx}
             cell={cell}
-            revealCell={props.revealCell} />)
+            revealCell={props.revealCell}
+            flagCell={props.flagCell} />)
       }
     </div>
   );

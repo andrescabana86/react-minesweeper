@@ -1,7 +1,10 @@
 import {
   START_NEW_GAME,
-  REVEAL_CELL } from '../actions/types';
-import { revealCellAndTestPosition } from '../helpers';
+  REVEAL_CELL,
+  FLAG_CELL} from '../actions/types';
+import {
+  revealCellAndTestPosition,
+  flagCell } from '../helpers';
 
 const initialState:any = {
   gameTitle: 'Welcome to Minesweeper!',
@@ -22,6 +25,9 @@ const initialState:any = {
   },
   neighborsByXY: {
     '2,1': ['2,2', '2,3', '2,4', '2,5', '2,6'],
+  },
+  minesByXY: {
+    '1,5': true,
   },
   board: [
     {
@@ -49,6 +55,12 @@ export default (state = initialState, action: any) => {
 
     case REVEAL_CELL:
       revealCellAndTestPosition(state, action.cellPosition);
+      return {
+        ...state,
+      };
+
+    case FLAG_CELL:
+      flagCell(state, action.cellPosition);
       return {
         ...state,
       };

@@ -12,7 +12,8 @@ export const Cell:React.SFC<any> = (props:any) => {
 
   return (
     <div className={stylish}
-      onClick={() => props.revealCell(props.cell)}>
+      onClick={() => props.revealCell(props.cell)}
+      onContextMenu={(evt:any) => props.flagCell(evt, props.cell)}>
       { icon }
     </div>
   );
