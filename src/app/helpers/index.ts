@@ -1,6 +1,10 @@
 import { CELL_STATUSES } from '../constants';
 
-export const revealCell = (state:any, cellPosition:string) => {
-  const cell = state.board[0].children[0];
+export const revealCellAndTestPosition = (state:any, cellPosition:string) => {
+  const cell = state.cellsByXY[cellPosition];
+  revealCell(cell);
+};
+
+const revealCell = (cell:any) => {
   cell.status = CELL_STATUSES.revealed;
 };

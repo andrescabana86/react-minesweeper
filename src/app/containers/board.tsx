@@ -14,9 +14,11 @@ class Board extends React.Component <any> {
       <section className="board__container">
         {
           this.props.board.matrix.map((row:any, idx:number) => {
+            const children = row.children.map((childPosition:string) =>
+              this.props.board.cells[childPosition]);
             return (
               <Row key={idx}
-                children={row.children}
+                children={children}
                 revealCell={this.onRevealCell.bind(this)} />
             );
           })
@@ -29,6 +31,7 @@ class Board extends React.Component <any> {
 const mapStateToProps = (state:any) => ({
   board: {
     matrix: state.board,
+    cells: state.cellsByXY,
   },
 });
 
