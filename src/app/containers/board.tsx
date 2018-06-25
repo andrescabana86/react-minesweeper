@@ -8,6 +8,7 @@ import {
   revealAll,
   gameOver,
   saveGameState,
+  resetGame,
 } from '../actions';
 import { CELL_TYPES } from '../constants';
 import './board.css';
@@ -34,6 +35,10 @@ class Board extends React.Component <any> {
     }
   }
 
+  exit() {
+    this.props.resetGame();
+  }
+
   render() {
     return (
       <section className="board__container">
@@ -50,6 +55,7 @@ class Board extends React.Component <any> {
           })
         }
         <div className="board-stats__container">
+          <button onClick={() => this.exit()}>Exit</button>
           <button onClick={() => this.saveAndClose()}>Save & Close</button>
         </div>
       </section>
@@ -77,6 +83,7 @@ const mapActionsToProps = (dispatch:Function) => ({
     dispatch(gameOver());
   },
   saveGameAndExit: () => dispatch(saveGameState()),
+  resetGame: () => dispatch(resetGame()),
 });
 
 export default connect(mapStateToProps, mapActionsToProps)(Board);

@@ -6,6 +6,7 @@ import {
   GAME_OVER,
   SAVE_GAME_STATE,
   RESTORE_GAME,
+  RESET_GAME,
 } from './types';
 
 export const startNewGame = () => ({ type: START_NEW_GAME });
@@ -15,3 +16,4 @@ export const revealAll = () => ({ type: REVEAL_ALL });
 export const gameOver = () => ({ type: GAME_OVER });
 export const saveGameState = () => ({ type: SAVE_GAME_STATE });
 export const restoreGame = () => ({ type: RESTORE_GAME });
+export const resetGame = () => ({ type: RESET_GAME });

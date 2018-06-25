@@ -6,6 +6,7 @@ import {
   GAME_OVER,
   SAVE_GAME_STATE,
   RESTORE_GAME,
+  RESET_GAME,
 } from '../actions/types';
 
 import {
@@ -73,6 +74,11 @@ export default (state = initialState, action: any) => {
     case RESTORE_GAME:
       return {
         ...restoreGame(),
+      };
+
+    case RESET_GAME:
+      return {
+        ...initialState,
       };
 
     default:

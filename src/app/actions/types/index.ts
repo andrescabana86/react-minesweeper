@@ -5,3 +5,4 @@ export const REVEAL_ALL = 'REVEAL_ALL';
 export const GAME_OVER = 'GAME_OVER';
 export const SAVE_GAME_STATE = 'SAVE_GAME_STATE';
 export const RESTORE_GAME = 'RESTORE_GAME';
+export const RESET_GAME = 'RESET_GAME';
