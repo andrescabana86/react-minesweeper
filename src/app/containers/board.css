@@ -1,3 +1,13 @@
 .board__container {
   background-color: transparent;
 }
+
+.board-stats__container {
+  display: block;
+  padding: 20px 2px;
+}
+
+.board-stats__container button {
+  float: right;
+  cursor: pointer;
+}

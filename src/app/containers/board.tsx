@@ -7,14 +7,12 @@ import {
   startNewGame,
   revealAll,
   gameOver,
+  saveGameState,
 } from '../actions';
 import { CELL_TYPES } from '../constants';
 import './board.css';
 
 class Board extends React.Component <any> {
-  componentDidMount() {
-    this.props.startNewGame();
-  }
 
   onRevealCell(cell:any) {
     if (cell.type === CELL_TYPES.bomb) {
@@ -28,6 +26,12 @@ class Board extends React.Component <any> {
   onFlagCell(evt:any, cell:any) {
     evt.preventDefault();
     this.props.flagCell(cell.position);
+  }
+
+  saveAndClose() {
+    if (this.props.game.losed === false) {
+      this.props.saveGameAndExit();
+    }
   }
 
   render() {
@@ -45,6 +49,9 @@ class Board extends React.Component <any> {
             );
           })
         }
+        <div className="board-stats__container">
+          <button onClick={() => this.saveAndClose()}>Save & Close</button>
+        </div>
       </section>
     );
   }
@@ -54,6 +61,9 @@ const mapStateToProps = (state:any) => ({
   board: {
     matrix: state.board,
     cells: state.cellsByXY,
+  },
+  game: {
+    losed: state.gameOver,
   },
 });
 
@@ -66,6 +76,7 @@ const mapActionsToProps = (dispatch:Function) => ({
     alert('GameOver!');
     dispatch(gameOver());
   },
+  saveGameAndExit: () => dispatch(saveGameState()),
 });
 
 export default connect(mapStateToProps, mapActionsToProps)(Board);

@@ -22,3 +22,5 @@ export const NB_MATRIX = Object.freeze([
   [-1, 0],           [1, 0],
   [-1, 1],  [0, 1],  [1, 1],
 ]);
+
+export const LOCAL_STORAGE_KEY = '@minesweeper';

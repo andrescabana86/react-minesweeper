@@ -3,6 +3,7 @@ import {
   CELL_TYPES,
   DEFAULT_BOARD,
   NB_MATRIX,
+  LOCAL_STORAGE_KEY,
 } from '../constants';
 
 export const revealCellAndTestPosition = (state:any, cellPosition:string) => {
@@ -11,6 +12,7 @@ export const revealCellAndTestPosition = (state:any, cellPosition:string) => {
   if (cell.type === CELL_TYPES.space) {
     revealAllSurroundingSpaces(state, cell);
   }
+  saveGameState(state);
 };
 
 const revealCell = (cell:any) => {
@@ -37,6 +39,7 @@ export const flagCell = (state:any, cellPosition:string) => {
   cell.type = CELL_TYPES.flag;
   revealCell(cell);
   state.minesByXY[cellPosition] = false;
+  saveGameState(state);
 };
 
 export const generateBoard = (initialBoard = DEFAULT_BOARD) => {
@@ -119,4 +122,20 @@ export const revealBoard = (state:any) => {
   cells.forEach((cell) => {
     revealCell(state.cellsByXY[cell]);
   });
+};
+
+export const saveGameState = (currentState:any) => {
+  if (typeof(Storage) !== 'undefined') {
+    const json = JSON.stringify(currentState);
+    localStorage.setItem(LOCAL_STORAGE_KEY, json);
+  } else {
+    console.warn('local storage is not available.');
+  }
+};
+
+export const getPreviousSavedGame = () => !!localStorage.getItem(LOCAL_STORAGE_KEY);
+
+export const restoreGame = () => {
+  const json = localStorage.getItem(LOCAL_STORAGE_KEY);
+  return JSON.parse(json);
 };

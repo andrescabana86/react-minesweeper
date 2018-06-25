@@ -3,7 +3,9 @@ import {
   REVEAL_CELL,
   FLAG_CELL,
   REVEAL_ALL,
-  GAME_OVER
+  GAME_OVER,
+  SAVE_GAME_STATE,
+  RESTORE_GAME,
 } from '../actions/types';
 
 import {
@@ -11,11 +13,13 @@ import {
   generateBoard,
   flagCell,
   revealBoard,
+  saveGameState,
+  restoreGame,
 } from '../helpers';
 
 const initialState:any = {
   gameTitle: 'Welcome to Minesweeper!',
-  gameStarted: true,
+  gameStarted: false,
   gameOver: false,
   cellsByXY: {},
   neighborsByXY: {},
@@ -58,6 +62,17 @@ export default (state = initialState, action: any) => {
         ...state,
         gameTitle: 'Oh! :-( nice try!...',
         gameOver: true,
+      };
+
+    case SAVE_GAME_STATE:
+      saveGameState(state);
+      return {
+        ...initialState,
+      };
+
+    case RESTORE_GAME:
+      return {
+        ...restoreGame(),
       };
 
     default:

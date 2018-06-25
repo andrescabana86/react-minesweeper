@@ -1,10 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { startNewGame } from '../actions';
+import { startNewGame, restoreGame } from '../actions';
+import { getPreviousSavedGame } from '../helpers';
 import './welcome.css';
 
 class Welcome extends React.Component <any> {
   render() {
+    const hasPreviousSavedGames = getPreviousSavedGame();
     return (
       <section className="welcome__container">
         <h2>===================================</h2>
@@ -13,6 +15,14 @@ class Welcome extends React.Component <any> {
         <button onClick={this.props.startNewGame}>
           Start a new game!
         </button>
+        <h2>===================================</h2>
+        {
+          hasPreviousSavedGames && (
+          <div>
+            <h4>Restore a previous game</h4>
+            <button onClick={this.props.restoreGame}>Restore</button>
+          </div>)
+        }
       </section>
     );
   }
@@ -20,6 +30,7 @@ class Welcome extends React.Component <any> {
 
 const mapActionsToProps = (dispatch:Function) => ({
   startNewGame: () => dispatch(startNewGame()),
+  restoreGame: () => dispatch(restoreGame()),
 });
 
 export default connect(null, mapActionsToProps)(Welcome);
