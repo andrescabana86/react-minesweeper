@@ -18,7 +18,7 @@ The following is a list of items I wish to show:
 * Ability to 'flag' a cell with a question mark or red flag DONE!
 * Alert when game is over DONE!
 * Persistence. Not to lose the game if browser is closed DONE!
-* Time tracking
+* Time tracking DONE!
 * Ability to start a new game and preserve/resume the old ones DONE!
 * Ability to select the game parameters: number of rows, columns, and mines
 * Ability to support multiple users/accounts

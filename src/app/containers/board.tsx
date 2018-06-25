@@ -11,9 +11,11 @@ import {
   resetGame,
 } from '../actions';
 import { CELL_TYPES } from '../constants';
+import { Timer } from '../components/timer';
 import './board.css';
 
 class Board extends React.Component <any> {
+  timer = React.createRef<any>();
 
   onRevealCell(cell:any) {
     if (cell.type === CELL_TYPES.bomb) {
@@ -57,6 +59,10 @@ class Board extends React.Component <any> {
         <div className="board-stats__container">
           <button onClick={() => this.exit()}>Exit</button>
           <button onClick={() => this.saveAndClose()}>Save & Close</button>
+          {
+            this.props.game.losed !== true &&
+            (<Timer ref={this.timer} />)
+          }
         </div>
       </section>
     );
