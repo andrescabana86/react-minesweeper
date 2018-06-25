@@ -12,6 +12,9 @@ $ docker run -it --rm --network host -v ${PWD}/:/app -w /app node sh
 Run project `npm install` and then `npm start` to run development mode.
 Open `http://localhost:8080`.
 
+## Demo
+You can play the game [here](https://andrescabana86.github.io/react-minesweeper/).
+
 ## What to show
 The following is a list of items I wish to show:
 * When a cell with no adjacent mines is revealed, all adjacent squares will be revealed (and repeat) DONE!
