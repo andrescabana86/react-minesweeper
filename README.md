@@ -16,7 +16,7 @@ Open `http://localhost:8080`.
 The following is a list of items I wish to show:
 * When a cell with no adjacent mines is revealed, all adjacent squares will be revealed (and repeat) DONE!
 * Ability to 'flag' a cell with a question mark or red flag DONE!
-* Alert when game is over
+* Alert when game is over DONE!
 * Persistence. Not to lose the game if browser is closed
 * Time tracking
 * Ability to start a new game and preserve/resume the old ones
