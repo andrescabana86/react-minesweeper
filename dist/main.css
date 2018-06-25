@@ -1,0 +1,73 @@
+.welcome__container {
+  background-color: transparent;
+  text-align: center;
+}
+
+.welcome__rules {
+  margin-top:20px;
+  text-align: left;
+}
+
+.cell__container {
+  align-items: center;
+  background-color: #ddd;
+  border-radius: 3px;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: inline-flex;
+  font-weight: bold;
+  font-size: 11px;
+  height: 40px;
+  justify-content: center;
+  margin: 3px;
+  padding: 0px;
+  text-align: center;
+  width: 40px;
+}
+
+.cell--danger {
+  color:red;
+}
+
+.cell--number-danger {
+  color:red;
+}
+
+.cell--number-warning {
+  color:orange;
+}
+
+.cell--number-advice {
+  color:blue;
+}
+
+.timer--running {
+  color: green;
+  margin: 0px;
+}
+
+.board__container {
+  background-color: transparent;
+}
+
+.board-stats__container {
+  display: block;
+  padding: 20px 2px;
+}
+
+.board-stats__container button {
+  float: right;
+  cursor: pointer;
+}
+
+body,
+html {
+  margin: 0px;
+  padding: 0px
+}
+
+.app__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
